@@ -1,41 +1,3 @@
-"""
-Student Management System - Beautiful TUI Application
-=====================================================
-
-FILE STRUCTURE:
---------------
-student_management_system/
-│
-├── main.py                 # Main application entry point (THIS FILE)
-├── models/
-│   ├── __init__.py
-│   └── student.py         # Student data model
-├── storage/
-│   ├── __init__.py
-│   └── database.py        # JSON-based storage manager
-├── ui/
-│   ├── __init__.py
-│   ├── menu.py            # Menu system
-│   └── forms.py           # Input forms and dialogs
-└── utils/
-    ├── __init__.py
-    └── validators.py      # Input validation utilities
-
-HOW TO RUN:
------------
-1. Install dependencies:
-   pip install rich
-
-2. Run the application:
-   python main.py
-
-3. Navigate using number keys and follow on-screen prompts
-"""
-
-# ============================================================================
-# FILE: main.py
-# ============================================================================
-
 from rich.console import Console
 from rich.panel import Panel
 from rich.layout import Layout
@@ -47,10 +9,6 @@ import os
 from datetime import datetime
 
 console = Console()
-
-# ============================================================================
-# FILE: models/student.py
-# ============================================================================
 
 class Student:
     def __init__(self, student_id, name, age, grade, email, phone):
@@ -169,10 +127,6 @@ class Validator:
     def validate_grade(grade):
         return grade.strip() != ''
 
-# ============================================================================
-# FILE: ui/menu.py & ui/forms.py
-# ============================================================================
-
 class UI:
     @staticmethod
     def show_header():
@@ -223,10 +177,6 @@ class UI:
     @staticmethod
     def pause():
         console.input("\n[dim]Press Enter to continue...[/]")
-
-# ============================================================================
-# Main Application Logic
-# ============================================================================
 
 class StudentManagementApp:
     def __init__(self):
@@ -473,10 +423,6 @@ class StudentManagementApp:
             border_style="green"
         ))
         time.sleep(1)
-
-# ============================================================================
-# Application Entry Point
-# ============================================================================
 
 if __name__ == "__main__":
     try:
